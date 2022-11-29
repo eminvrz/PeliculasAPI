@@ -15,6 +15,7 @@ using PeliculasAPI.ApiBehavior;
 using PeliculasAPI.Controllers;
 using PeliculasAPI.Filtros;
 using PeliculasAPI.Repositorio;
+using PeliculasAPI.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -37,6 +38,11 @@ namespace PeliculasAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup));
+
+            services.AddTransient<AlmacenadorArchivosLocal>();
+
+            services.AddHttpContextAccessor();
+
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
 
