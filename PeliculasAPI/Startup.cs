@@ -80,6 +80,8 @@ namespace PeliculasAPI
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseCors();
