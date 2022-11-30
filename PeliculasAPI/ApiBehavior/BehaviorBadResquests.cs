@@ -10,12 +10,12 @@ namespace PeliculasAPI.ApiBehavior
     {
         public static void Parsear(ApiBehaviorOptions options)
         {
-            options.InvalidModelStateResponseFactory = ActionContext =>
+            options.InvalidModelStateResponseFactory = actionContext =>
             {
                 var respuesta = new List<string>();
-                foreach (var llave in ActionContext.ModelState.Keys)
+                foreach (var llave in actionContext.ModelState.Keys)
                 {
-                    foreach (var error in ActionContext.ModelState[llave].Errors)
+                    foreach (var error in actionContext.ModelState[llave].Errors)
                     {
                         respuesta.Add($"{llave}: {error.ErrorMessage}");
                     }

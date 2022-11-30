@@ -7,7 +7,7 @@ namespace PeliculasAPI.DTOs
 {
     public class PaginacionDTO
     {
-        public int pagina { get; set; }
+        public int pagina { get; set; } = 1;
 
         private int recordPorPagina = 10;
         private readonly int cantidadMaximaRecordsPorPagina = 50;
