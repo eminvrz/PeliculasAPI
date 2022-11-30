@@ -17,7 +17,8 @@ namespace PeliculasAPI.Controllers
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
-        private readonly string contenedor;
+        private readonly string contenedor = "actores";
+        private readonly AlmacenadorArchivosLocal almacenadorArchivosLocal;
 
         public ActoresController(ApplicationDbContext context, IMapper mapper)
         {
@@ -34,11 +35,45 @@ namespace PeliculasAPI.Controllers
             return mapper.Map<List<ActorDTO>>(actores);
         }
 
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<ActorDTO>> Get(int id)
+        {
+            var actor = await context.Actores.FirstOrDefaultAsync(x => x.Id == id);
+
+            if(actor == null)
+            {
+                return NotFound();
+            }
+
+            return mapper.Map<ActorDTO>(actor);
+        }
+
         [HttpPost]
         public async Task<ActionResult> Post([FromForm] ActorCreacionDTO actorCreacionDTO)
         {
             var actor = mapper.Map<Actor>(actorCreacionDTO);
             context.Add(actor);
+            await context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> Put(int id, [FromForm] ActorCreacionDTO actorCreacionDTO)
+        {
+            var actor = await context.Actores.FirstOrDefaultAsync(x => x.Id == id); 
+
+            if( actor == null)
+            {
+                return NotFound();
+            }
+
+            actor = mapper.Map(actorCreacionDTO, actor);
+
+            if(actorCreacionDTO.Foto != null)
+            {
+                actor.Foto = await almacenadorArchivosLocal.EditarArchivo(contenedor, actorCreacionDTO.Foto, actor.Foto);
+            }
+
             await context.SaveChangesAsync();
             return NoContent();
         }

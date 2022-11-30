@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using NetTopologySuite;
+using NetTopologySuite.Geometries;
 using PeliculasAPI.ApiBehavior;
 using PeliculasAPI.Controllers;
 using PeliculasAPI.Filtros;
@@ -39,12 +41,26 @@ namespace PeliculasAPI
         {
             services.AddAutoMapper(typeof(Startup));
 
+            services.AddSingleton(provider =>
+            {
+                new MapperConfiguration(config =>
+                {
+                    var geometryFactory = provider.GetRequiredService<GeometryFactory>(());
+                    config.AddProfile(new AutoMapperProfiles(geometryFactory));
+                });
+            });
+
+            services.AddSingleton<GeometryFactory>(NtsGeometryServices.Instance.CreateGeometryFactory(srid: 4326));
+
             services.AddTransient<AlmacenadorArchivosLocal>();
 
             services.AddHttpContextAccessor();
 
             services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("defaultConnection"),
+            sqlServer => sqlServer.UseNetTopologySuite()));
+
+           
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
             services.AddResponseCaching();
