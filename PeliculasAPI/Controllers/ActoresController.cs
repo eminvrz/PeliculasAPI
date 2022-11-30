@@ -42,7 +42,6 @@ namespace PeliculasAPI.Controllers
             await context.SaveChangesAsync();
             return NoContent();
         }
-
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
