@@ -52,6 +52,12 @@ namespace PeliculasAPI.Controllers
         public async Task<ActionResult> Post([FromForm] ActorCreacionDTO actorCreacionDTO)
         {
             var actor = mapper.Map<Actor>(actorCreacionDTO);
+
+            if(actorCreacionDTO.Foto != null)
+            {
+                actor.Foto = await almacenadorArchivosLocal.GuardarArchivo(contenedor, actorCreacionDTO.Foto);
+            }
+
             context.Add(actor);
             await context.SaveChangesAsync();
             return NoContent();

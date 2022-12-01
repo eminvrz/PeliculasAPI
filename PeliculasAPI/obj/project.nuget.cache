@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6ubvBCkzeMXDh3cbj7gftSPznozD2J28CLcfBYZuxhf1tqNHekeA6Y3HW9bFSul/VtUmfZ6yokgstP6VyVbPxw==",
+  "dgSpecHash": "nVk7pEl6BUd2LF+Yd+oQTCkLTKZPCS5wI7garKHn623RozDsWNFV56XeSx/9ZRU2RZ0UWHcT0u09GJnBnuKCVQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\Desktop\\curso-React17_ASP.NET C6\\Modulo 1 - Introduccion\\PeliculasAPI\\PeliculasAPI\\PeliculasAPI.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,7 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\nettopologysuite\\2.1.0\\nettopologysuite.2.1.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\nettopologysuite.io.sqlserverbytes\\2.0.0\\nettopologysuite.io.sqlserverbytes.2.0.0.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
