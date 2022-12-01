@@ -64,3 +64,4 @@ C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\Pelicul
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\NetTopologySuite.dll
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\NetTopologySuite.IO.SqlServerBytes.dll
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\EFCoreSqlServerNetTopologySuite.cs
+C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
