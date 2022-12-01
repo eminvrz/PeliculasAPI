@@ -20,14 +20,8 @@ namespace PeliculasAPI.Entidades
         [PrimeraLetraMayuscula] // regla de validacion personalizada por atributo
         public string Nombre { get; set; }
 
-        //[Range(18, 120)]
-        //public int Edad { get; set; }
+        public List<PeliculasGeneros> PeliculasGeneros { get; set; }
 
-        //[CreditCard]
-        //public string TarjetaDeCredito { get; set; }
-
-        //[Url]
-        //public string URL { get; set; }
 
 
 
