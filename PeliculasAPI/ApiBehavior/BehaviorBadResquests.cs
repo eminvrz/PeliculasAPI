@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PeliculasAPI.ApiBehavior
 {
-    public class BehaviorBadResquests
+    public static class BehaviorBadResquests
     {
         public static void Parsear(ApiBehaviorOptions options)
         {

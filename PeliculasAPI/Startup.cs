@@ -59,7 +59,16 @@ namespace PeliculasAPI
             options.UseSqlServer(Configuration.GetConnectionString("defaultConnection"),
             sqlServer => sqlServer.UseNetTopologySuite()));
 
-           
+            // CORS Configurado para hacer uso del frontend
+            services.AddCors(options =>
+            {
+                var frontendURL = Configuration.GetValue<string>("frontend_url");
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader()
+                    .WithExposedHeaders(new string[] { "cantidadTotalRegistros" });
+                });
+            });
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
             services.AddResponseCaching();
@@ -70,17 +79,6 @@ namespace PeliculasAPI
                 options.Filters.Add(typeof(FiltroDeExcepcion));
                 options.Filters.Add(typeof(ParsearBadRequests));
             }).ConfigureApiBehaviorOptions(BehaviorBadResquests.Parsear);
-
-            // CORS Configurado para hacer uso del frontend
-            services.AddCors(options =>
-            {
-                var frontendURL = Configuration.GetValue<string>("frontend_url");
-                options.AddDefaultPolicy(builder =>
-                {
-                    builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader()
-                    .WithExposedHeaders(new string[] {"cantidadTotalRegistros"});
-                });
-            });
 
             services.AddSwaggerGen(c =>
             {
@@ -106,6 +104,8 @@ namespace PeliculasAPI
             app.UseRouting();
 
             app.UseCors();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

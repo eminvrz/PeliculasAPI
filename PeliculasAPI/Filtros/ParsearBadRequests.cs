@@ -12,12 +12,12 @@ namespace PeliculasAPI.Filtros
     {
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            var casteoResult = context.Result as IStatusCodeActionResult;
-            if(casteoResult == null)
+           
+            if(context.Result is null)
             {
                 return;
             }
-            var codigoEstatus = casteoResult.StatusCode;
+            var codigoEstatus = (context.Result as IStatusCodeActionResult).StatusCode;
             if(codigoEstatus == 400)
             {
                 var respuesta = new List<string>();
