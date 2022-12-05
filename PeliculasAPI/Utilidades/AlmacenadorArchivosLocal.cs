@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 using System;
+using System.Linq;
 using System.IO;
 using System.Threading.Tasks;
 
 namespace PeliculasAPI.Utilidades
 {
-    public class AlmacenadorArchivosLocal
+    public class AlmacenadorArchivosLocal:IAlmacenadorArchivos
     {
         private readonly IWebHostEnvironment env;
         private readonly IHttpContextAccessor httpContextAccessor;
@@ -41,7 +43,7 @@ namespace PeliculasAPI.Utilidades
         public async Task<string> GuardarArchivo(string contenedor, IFormFile archivo)
         {
             var extension = Path.GetExtension(archivo.FileName);
-            var nombreArchivo = $"{Guid.NewGuid()}";
+            var nombreArchivo = $"{Guid.NewGuid()}{extension}";
             string folder = Path.Combine(env.WebRootPath, contenedor);
 
             if (!Directory.Exists(folder))
@@ -57,15 +59,12 @@ namespace PeliculasAPI.Utilidades
                 await File.WriteAllBytesAsync(ruta, contenido);
             }
 
-            var urlActual = $"{httpContextAccessor.HttpContext.Request.Scheme}:://{httpContextAccessor.HttpContext.Request.Host}";
+            var urlActual = $"{httpContextAccessor.HttpContext.Request.Scheme}://{httpContextAccessor.HttpContext.Request.Host}";
             var rutaParaDB = Path.Combine(urlActual, contenedor, nombreArchivo).Replace("\\", "/");
             return rutaParaDB;
         }
 
-        internal static Task BorrarArchivo(string foto, object contenedor)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 
   

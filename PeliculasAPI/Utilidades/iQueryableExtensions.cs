@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PeliculasAPI.Utilidades
 {
-    public static class iQueryableExtensions
+    public static class IQueryableExtensions
     {
         public static IQueryable<T> Paginar<T>(this IQueryable<T> queryable, PaginacionDTO paginacionDTO)
         {
