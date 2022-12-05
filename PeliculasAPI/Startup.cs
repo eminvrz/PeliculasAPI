@@ -51,7 +51,7 @@ namespace PeliculasAPI
 
             services.AddSingleton<GeometryFactory>(NtsGeometryServices.Instance.CreateGeometryFactory(srid: 4326));
 
-            services.AddTransient<AlmacenadorArchivosLocal>();
+            services.AddTransient<IAlmacenadorArchivos, AlmacenadorArchivosLocal>();
 
             services.AddHttpContextAccessor();
 
@@ -107,7 +107,6 @@ namespace PeliculasAPI
 
             app.UseAuthentication();
 
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

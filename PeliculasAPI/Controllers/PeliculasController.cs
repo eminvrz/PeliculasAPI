@@ -17,16 +17,32 @@ namespace PeliculasAPI.Controllers
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
-        private readonly AlmacenadorArchivosLocal almacenadorArchivosLocal;
+        private readonly IAlmacenadorArchivos almacenadorArchivos;
         private readonly string contenedor = "peliculas";
 
         public PeliculasController(ApplicationDbContext context,
             IMapper mapper,
-            AlmacenadorArchivosLocal almacenadorArchivosLocal)
+            IAlmacenadorArchivos almacenadorArchivos)
         {
             this.context = context;
             this.mapper = mapper;
-            this.almacenadorArchivosLocal = almacenadorArchivosLocal;
+            this.almacenadorArchivos = almacenadorArchivos;
+        }
+
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<PeliculaDTO>> Get(int id)
+        {
+            var pelicula = await context.Peliculas
+                .Include(x => x.PeliculasGeneros).ThenInclude(x => x.Genero)
+                .Include(x => x.PeliculasActores).ThenInclude(x => x.Actor)
+                .Include(x => x.PeliculasCines).ThenInclude(x => x.Cine)
+                .FirstOrDefaultAsync(X => X.Id == id);
+
+            if(pelicula == null) { return NotFound(); }
+
+            var dto = mapper.Map<PeliculaDTO>(pelicula);
+            dto.Actores = dto.Actores.OrderBy(x => x.Orden).ToList();
+            return dto;
         }
 
         [HttpPost]
@@ -36,7 +52,7 @@ namespace PeliculasAPI.Controllers
 
             if (peliculaCreacionDTO.Poster != null)
             {
-                pelicula.Poster = await almacenadorArchivosLocal.GuardarArchivo(contenedor, peliculaCreacionDTO.Poster);
+                pelicula.Poster = await almacenadorArchivos.GuardarArchivo(contenedor, peliculaCreacionDTO.Poster);
             }
 
             EscribirOrdenActores(pelicula);
@@ -46,7 +62,7 @@ namespace PeliculasAPI.Controllers
             return NoContent();
         }
 
-        [HttpGet("PostGet")]
+        [HttpGet("PostGet")] 
         public async Task<ActionResult<PeliculasPostGetDTO>> PostGet()
         {
             var cines = await context.Cines.ToListAsync();

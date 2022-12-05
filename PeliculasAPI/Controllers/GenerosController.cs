@@ -17,8 +17,6 @@ namespace PeliculasAPI.Controllers
 {
      [Route("api/generos")]
      [ApiController]
-
-
     public class GenerosController:ControllerBase
     {
         private readonly ILogger<GenerosController> logger;
