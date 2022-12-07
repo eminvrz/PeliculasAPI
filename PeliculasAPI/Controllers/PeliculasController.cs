@@ -29,6 +29,7 @@ namespace PeliculasAPI.Controllers
             this.almacenadorArchivos = almacenadorArchivos;
         }
 
+        // para obtener las peliculas en el landingPage
         [HttpGet]
         public async Task<ActionResult<LandingPageDTO>> Get()
         {
@@ -70,6 +71,42 @@ namespace PeliculasAPI.Controllers
             return dto;
         }
 
+        [HttpGet("filtrar")]
+        public async Task<ActionResult<List<PeliculaDTO>>> Filtrar([FromQuery] PeliculasFiltrarDTO peliculasFiltrarDTO)
+        {
+            var peliculasQueryable = context.Peliculas.AsQueryable();
+
+            if (!string.IsNullOrEmpty(peliculasFiltrarDTO.Titulo))
+            {
+                peliculasQueryable = peliculasQueryable.Where(x => x.Titulo.Contains(peliculasFiltrarDTO.Titulo));
+            }
+
+            if (peliculasFiltrarDTO.EnCines)
+            {
+                peliculasQueryable = peliculasQueryable.Where(x => x.EnCines);
+            }
+
+            if (peliculasFiltrarDTO.ProximosEstrenos)
+            {
+                var hoy = DateTime.Today;
+                peliculasQueryable = peliculasQueryable.Where(x => x.FechaLanzamiento > hoy);
+            }
+
+            if (peliculasFiltrarDTO.GeneroId != 0)
+            {
+                peliculasQueryable = peliculasQueryable
+                    .Where(x => x.PeliculasGeneros.Select(y => y.GeneroId)
+                    .Contains(peliculasFiltrarDTO.GeneroId));
+            }
+
+            await HttpContext.InsertarParametrosPaginacionEnCabecera(peliculasQueryable);
+
+            var peliculas = await peliculasQueryable.Paginar(peliculasFiltrarDTO.PaginacionDTO).ToListAsync();
+            return mapper.Map<List<PeliculaDTO>>(peliculas);
+        }
+
+
+        // para crear la pelicula
         [HttpPost]
         public async Task<ActionResult> Post([FromForm] PeliculaCreacionDTO peliculaCreacionDTO)
         {
@@ -87,6 +124,7 @@ namespace PeliculasAPI.Controllers
             return NoContent();
         }
 
+        // para ver en detalle lo que vamos a mandar
         [HttpGet("PostGet")] 
         public async Task<ActionResult<PeliculasPostGetDTO>> PostGet()
         {
@@ -99,6 +137,7 @@ namespace PeliculasAPI.Controllers
             return new PeliculasPostGetDTO() { Cines = cinesDTO, Generos = generosDTO };
         }
 
+        // Para ver los detalles de la pelicula
         [HttpGet("PutGet/{id:int}")]
         public async Task<ActionResult<PeliculasPutGetDTO>> PutGet(int id)
         {
@@ -130,6 +169,7 @@ namespace PeliculasAPI.Controllers
             return respuesta;
         }
 
+        // Para modificar peliculas
         [HttpPut("{id:int}")]
         public async Task<ActionResult> Put(int id, [FromForm] PeliculaCreacionDTO peliculaCreacionDTO)
         {
@@ -158,7 +198,7 @@ namespace PeliculasAPI.Controllers
 
         }
 
-
+        // Para borrar Peliculas
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete( int id)
         {

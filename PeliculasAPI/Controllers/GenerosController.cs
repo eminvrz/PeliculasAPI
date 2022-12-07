@@ -46,6 +46,13 @@ namespace PeliculasAPI.Controllers
             var generos = await queryable.OrderBy(x => x.Nombre).Paginar(paginacionDTO).ToListAsync();
             return mapper.Map<List<GeneroDTO>>(generos);
         }
+
+        [HttpGet("todos")]
+        public async Task<ActionResult<List<GeneroDTO>>> Todos()
+        {
+            var generos = await context.Generos.OrderBy(x => x.Nombre).ToListAsync();
+            return mapper.Map<List<GeneroDTO>>(generos);
+        }
        
 
         [HttpGet("{Id:int}")] // api/generos/1/Comedia
