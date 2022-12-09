@@ -116,9 +116,9 @@ namespace PeliculasAPI.Utilidades
         {
             var resultado = new List<PeliculasGeneros>();
 
-            if (peliculaCreacionDTO.GeneroIds == null) { return resultado; }
+            if (peliculaCreacionDTO.GenerosIds == null) { return resultado; }
 
-            foreach (var id in peliculaCreacionDTO.GeneroIds)
+            foreach (var id in peliculaCreacionDTO.GenerosIds)
             {
                 resultado.Add(new PeliculasGeneros() { GeneroId = id });
             }
