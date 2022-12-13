@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -24,9 +24,9 @@ namespace PeliculasAPI.Controllers
             this.userManager = userManager;
             this.context = context;
         }
+        //Solo usuarios autenticados podran realizar este endpoint
         [HttpPost]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        //Solo usuarios autenticados podran realizar este endpoint
         public async Task<ActionResult> Post([FromBody] RatingDTO ratingDTO)
         {
             var email = HttpContext.User.Claims.FirstOrDefault(x => x.Type == "email").Value;
@@ -44,13 +44,12 @@ namespace PeliculasAPI.Controllers
                 rating.Puntuacion = ratingDTO.Puntuacion;
                 rating.UsuarioId = usuarioId;
                 context.Add(rating);
-                await context.SaveChangesAsync();
             }
             else
             {
                 ratingActual.Puntuacion = ratingDTO.Puntuacion;
             }
-                 await context.SaveChangesAsync();
+            await context.SaveChangesAsync();
             return NoContent();
         }
         

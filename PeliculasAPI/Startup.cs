@@ -128,6 +128,7 @@ namespace PeliculasAPI
 
             app.UseAuthentication();
 
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
