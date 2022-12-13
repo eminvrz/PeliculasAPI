@@ -96,6 +96,12 @@ namespace PeliculasAPI
             //services.AddScoped<IRepositorio, RepositorioEnMemoria>();
             //services.AddScoped<WeatherForecastController>();
             //services.AddTransient<MiFiltroDeAccion>();
+
+            services.AddAuthorization(opciones =>
+            {
+                opciones.AddPolicy("EsAdmin", policy => policy.RequireClaim("role", "admin"));
+            });
+
             services.AddControllers(options => {
                 options.Filters.Add(typeof(FiltroDeExcepcion));
                 options.Filters.Add(typeof(ParsearBadRequests));
