@@ -5,5 +5,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>PeliculasAPI</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\Properties\PublishProfiles\PeliculasAPI20221213184404 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

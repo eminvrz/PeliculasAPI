@@ -2,11 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>6fd9b1c7-057f-43bd-9f41-4a7e5c9683c0</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/cc568b59-704b-4fad-9ace-bcfbe81bb2b4/resourcegroups/PeliculasAPI20221213184404ResourceGroup/providers/Microsoft.Insights/components/PeliculasAPI</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="Furion.Extras.Authentication.JwtBearer" Version="4.8.2.9" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="5.0.5" />

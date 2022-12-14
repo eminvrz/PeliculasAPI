@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAPUY33+/B0abBzx/PgoQKwAAAAACAAAAAAAQZgAAAAEAACAAAADbsBxN0wrnTD/zNeR70XmzeEXJZv3IkcB/z1KUwhPCEAAAAAAOgAAAAAIAACAAAAACF6f5zEy8d1MqQdKIAgl4mtOlJdSng4PwBNONDJr6DIAAAAAYJ6Tu6naCJEJDdBkKWHsIPIFAWOdFDKEQ5MyWV7GMf2ojlu8mgHDuKB01Ny8QPq7CnTlcg1tf7y/SeQYRTC7JdTikzzEKjNn40F8JyTsIWdktp6//qRYq51BbCSvWETOs/ycrP3Fh3TJilz2aqGcDVSv4Zd5EWDLb+7XXK1Rf3kAAAABqjKo8HSi41hVVqquN13yvy9MgOjeSb2aN0P/9Fo6+5aRRSvWTQKD+JrK6nwvuxFrNOe3WvQ+AzzjejtQ/s36Y</EncryptedPassword>
+    <History>True|2022-12-14T02:18:22.7886388Z;True|2022-12-13T19:05:53.8043961-07:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="PeliculasAPI.ApplicationDbContext">
+      <Value>Data Source=tcp:peliculasapidbserver090.database.windows.net,1433%3bInitial Catalog=PeliculasAPI_db%3bUser Id=Eminvrz%40peliculasapidbserver090%3bPassword=WHISKYpalma09.</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

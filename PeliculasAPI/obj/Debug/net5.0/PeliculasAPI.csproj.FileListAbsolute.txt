@@ -5,7 +5,6 @@ C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\Pelicul
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\PeliculasAPI.runtimeconfig.json
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\PeliculasAPI.runtimeconfig.dev.json
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\PeliculasAPI.dll
-C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\ref\PeliculasAPI.dll
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\PeliculasAPI.pdb
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
@@ -57,7 +56,6 @@ C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\Pelicul
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\PeliculasAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\EFCoreSqlServerNetTopologySuite.cs
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\staticwebassets\PeliculasAPI.StaticWebAssets.Manifest.cache
-C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\staticwebassets\PeliculasAPI.StaticWebAssets.xml
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\scopedcss\bundle\PeliculasAPI.styles.css
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\PeliculasAPI.RazorTargetAssemblyInfo.cache
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\PeliculasAPI.csproj.CopyComplete
@@ -68,3 +66,10 @@ C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\Pelicul
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\bin\Debug\net5.0\PeliculasAPI.StaticWebAssets.xml
+C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\staticwebassets\PeliculasAPI.StaticWebAssets.Pack.cache
+C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\staticwebassets\msbuild.PeliculasAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\staticwebassets\msbuild.build.PeliculasAPI.props
+C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.PeliculasAPI.props
+C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.PeliculasAPI.props
+C:\Users\Lenovo\Desktop\curso-React17_ASP.NET C6\Modulo 1 - Introduccion\PeliculasAPI\PeliculasAPI\obj\Debug\net5.0\refint\PeliculasAPI.dll
